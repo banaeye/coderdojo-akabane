@@ -1,0 +1,26 @@
+[
+  {
+    "date": "2026-05-24",
+    "dateLabel": "2026年5月24日 09:30",
+    "title": "次回開催: CoderDojo 赤羽 #71",
+    "summary": "開催前の回です。最新の参加枠、会場、持ち物は connpass で確認してください。",
+    "reportUrl": null,
+    "connpassUrl": "https://coderdojo-akabane.connpass.com/event/392831/"
+  },
+  {
+    "date": "2026-04-26",
+    "dateLabel": "2026年4月26日 09:30",
+    "title": "CoderDojo 赤羽 #70",
+    "summary": "終了した回です。レポートは未作成です。",
+    "reportUrl": null,
+    "connpassUrl": "https://coderdojo-akabane.connpass.com/event/389223/"
+  },
+  {
+    "date": "2025-11-16",
+    "dateLabel": "2025年11月16日 09:30",
+    "title": "中止: CoderDojo 赤羽 #69",
+    "summary": "中止になった回です。詳細は connpass のイベントページで確認できます。",
+    "reportUrl": null,
+    "connpassUrl": "https://coderdojo-akabane.connpass.com/event/373932/"
+  }
+]
