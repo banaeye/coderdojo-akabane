@@ -11,6 +11,8 @@ Cloudflare Pages の設定例:
 - Build output directory: `/`
 - Root directory: リポジトリ直下
 
+公開URLは `https://coderdojo-akabane.pages.dev/` を想定しています。独自ドメインに切り替える場合は、各HTMLの `canonical`、OGP URL、構造化データ、`robots.txt`、`sitemap.xml` のURLを新しいドメインに揃えてください。
+
 ## 更新
 
 トップページの本文は `index.html`、作品ページは `works.html`、見た目は `styles.css`、活動履歴は `data/reports.json`、更新履歴は `data/updates.json` を編集します。
@@ -41,6 +43,8 @@ Cloudflare Pages の設定例:
   "external": false
 }
 ```
+
+新しい固定ページやレポートを追加したときは、検索エンジン向けに `sitemap.xml` にもURLと更新日を追加してください。
 
 ## 情報源
 
