@@ -495,6 +495,80 @@ h3 {
   text-decoration: none;
 }
 
+.report-gallery {
+  display: none;
+  grid-auto-columns: minmax(190px, 31%);
+  grid-auto-flow: column;
+  gap: 12px;
+  margin-top: 24px;
+  max-width: 760px;
+  overflow-x: auto;
+  padding: 2px 4px 12px 2px;
+  scroll-snap-type: x proximity;
+}
+
+.report-gallery:has(figure) {
+  display: grid;
+}
+
+.report-gallery figure {
+  margin: 0;
+  scroll-snap-align: start;
+}
+
+.report-gallery button {
+  display: block;
+  width: 100%;
+  border: 0;
+  background: transparent;
+  cursor: zoom-in;
+  padding: 0;
+}
+
+.report-gallery img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  object-fit: cover;
+  box-shadow: var(--shadow);
+}
+
+.image-dialog {
+  width: min(1040px, calc(100vw - 32px));
+  max-width: none;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  padding: 0;
+}
+
+.image-dialog::backdrop {
+  background: rgba(30, 35, 41, 0.78);
+}
+
+.image-dialog img {
+  display: block;
+  width: 100%;
+  max-height: calc(100svh - 96px);
+  border-radius: 8px;
+  object-fit: contain;
+  background: #fff;
+}
+
+.image-dialog button {
+  display: block;
+  margin: 0 0 10px auto;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--ink);
+  cursor: pointer;
+  font-weight: 900;
+  padding: 8px 12px;
+}
+
 .join-cards article {
   padding: 22px;
 }
@@ -624,6 +698,10 @@ h3 {
   .showcase-card,
   .report-list {
     grid-template-columns: 1fr;
+  }
+
+  .report-gallery {
+    grid-auto-columns: minmax(170px, 74%);
   }
 
   .showcase-card:nth-child(even) .showcase-image {

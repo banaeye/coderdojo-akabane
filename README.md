@@ -39,3 +39,20 @@ Cloudflare Pages の設定例:
 `assets/akabane-symbol.png` と `assets/akabane-cover.png` は CoderDojo 赤羽の connpass 公開ページで使われている画像を保存したものです。
 
 `assets/works-scratch.png` と `assets/works-dnovel.png` は作品紹介用のスクリーンショットです。
+
+## レポート画像
+
+レポート用の原本画像は `work/` 配下に置きます。`work/` は git 管理外です。
+
+```text
+work/reports/2026-04-26/activity/
+```
+
+公開用画像は次のコマンドでリサイズ・リネームします。
+
+```bash
+npx akabane-report-images 2026-04-26
+```
+
+`intro`, `activity`, `presentation`, `next` の各フォルダに入れた画像が、対応するレポートの `images/` 配下へ `activity-1.webp` のような名前で生成されます。
+入力画像は `.jpg`, `.jpeg`, `.png`, `.webp`, `.heic`, `.heif` に対応しています。

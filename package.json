@@ -1,0 +1,16 @@
+{
+  "name": "coder-dojo-akabane",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Static website for CoderDojo Akabane.",
+  "bin": {
+    "akabane-report-images": "scripts/process-report-images.mjs"
+  },
+  "scripts": {
+    "process-report-images": "node scripts/process-report-images.mjs"
+  },
+  "dependencies": {
+    "heic-convert": "^2.1.0",
+    "sharp": "^0.34.5"
+  }
+}
