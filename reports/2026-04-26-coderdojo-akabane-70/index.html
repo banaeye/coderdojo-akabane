@@ -11,14 +11,22 @@
     <meta property="og:title" content="CoderDojo 赤羽 #70 開催レポート" />
     <meta
       property="og:description"
-      content="常連メンバーに加えて初参加・見学の方も参加し、Scratchでの制作と発表を楽しみました。"
+      content="メンター2人、ニンジャ5人で、Scratchでの制作と発表を楽しみました。"
     />
     <meta property="og:type" content="article" />
     <meta property="og:image" content="../../assets/akabane-symbol.png" />
     <link rel="icon" href="../../assets/akabane-symbol.png" type="image/png" />
     <link rel="stylesheet" href="../../styles.css" />
   </head>
-  <body>
+  <body class="report-page">
+    <div class="bubble-field" aria-hidden="true">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
     <header class="site-header">
       <a class="brand" href="../../index.html" aria-label="CoderDojo 赤羽 トップ">
         <img class="brand-mark" src="../../assets/akabane-symbol.png" alt="" />
@@ -48,9 +56,9 @@
       <section class="section about-grid" aria-label="開催概要">
         <div>
           <p class="section-label">Event</p>
-          <h2>初参加の方も一緒に、Scratchに挑戦</h2>
+          <h2>メンター2人、ニンジャ5人でScratchに挑戦</h2>
           <p>
-            今回は、いつもの常連メンバーに加えて、初参加の方が1名、さらに見学として初めて参加された方も来てくれました。
+            今回は、メンター2人、ニンジャ5人で開催しました。いつもの常連メンバーに加えて、見学として初めて参加された方も来てくれました。
             見学の方もその場でPCをレンタルし、Scratchに挑戦。まずは触ってみるところから、自分のペースで作品づくりを体験してもらう時間になりました。
           </p>
           <p>
@@ -73,8 +81,8 @@
             <strong>赤羽文化センター 第3学習室</strong>
           </div>
           <div>
-            <span>参加</span>
-            <strong>5人</strong>
+            <span>参加者</span>
+            <strong>メンター2人・ニンジャ5人</strong>
           </div>
         </div>
       </section>
@@ -90,7 +98,7 @@
             </p>
             <p>
               発表を聞く側からも自然に反応があり、会場全体で作品を楽しむ時間になりました。
-              初参加の方も常連メンバーも、それぞれのペースで手を動かしながら過ごせた回でした。
+              ニンジャもメンターも、それぞれのペースで手を動かしながら過ごせた回でした。
             </p>
             <div class="report-gallery" data-report-gallery="presentation" aria-label="発表の写真"></div>
           </div>
@@ -171,6 +179,46 @@
             `,
           )
           .join("");
+
+        startAutoScroll(gallery);
+      }
+
+      function startAutoScroll(gallery) {
+        if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+        if (gallery.scrollWidth <= gallery.clientWidth) return;
+
+        let direction = 1;
+        let paused = false;
+        let frameId = null;
+
+        const pause = () => {
+          paused = true;
+        };
+        const resume = () => {
+          paused = false;
+        };
+
+        gallery.addEventListener("pointerenter", pause);
+        gallery.addEventListener("pointerleave", resume);
+        gallery.addEventListener("focusin", pause);
+        gallery.addEventListener("focusout", resume);
+        gallery.addEventListener("touchstart", pause, { passive: true });
+        gallery.addEventListener("touchend", resume, { passive: true });
+
+        function tick() {
+          if (!paused) {
+            const maxScroll = gallery.scrollWidth - gallery.clientWidth;
+            gallery.scrollLeft += direction * 0.35;
+
+            if (gallery.scrollLeft >= maxScroll - 1) direction = -1;
+            if (gallery.scrollLeft <= 1) direction = 1;
+          }
+
+          frameId = requestAnimationFrame(tick);
+        }
+
+        frameId = requestAnimationFrame(tick);
+        gallery.addEventListener("remove", () => cancelAnimationFrame(frameId), { once: true });
       }
 
       imageGroups.forEach(renderGallery);

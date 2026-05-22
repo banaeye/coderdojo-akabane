@@ -13,7 +13,7 @@ Cloudflare Pages の設定例:
 
 ## 更新
 
-トップページの本文は `index.html`、作品ページは `works.html`、見た目は `styles.css`、活動履歴は `data/reports.json` を編集します。
+トップページの本文は `index.html`、作品ページは `works.html`、見た目は `styles.css`、活動履歴は `data/reports.json`、更新履歴は `data/updates.json` を編集します。
 
 活動履歴は最新 3 件を表示します。次回開催がある場合は先頭に置いてください。レポートが未作成の場合は `reportUrl` を `null` にします。
 
@@ -25,6 +25,20 @@ Cloudflare Pages の設定例:
   "summary": "開催内容の短い説明を入れます。",
   "reportUrl": null,
   "connpassUrl": "https://coderdojo-akabane.connpass.com/"
+}
+```
+
+更新履歴を追加するときは、`data/updates.json` の先頭に次の形式で追加します。
+
+```json
+{
+  "date": "2026-05-22",
+  "dateLabel": "2026年5月22日",
+  "title": "作品ページを更新しました",
+  "summary": "更新内容の短い説明を入れます。",
+  "url": "works.html",
+  "linkLabel": "作品を見る",
+  "external": false
 }
 ```
 

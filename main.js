@@ -1,4 +1,5 @@
 const reportList = document.querySelector("#report-list");
+const updateList = document.querySelector("#update-list");
 
 function reportCard(report) {
   const reportLink = report.reportUrl
@@ -40,3 +41,43 @@ async function renderReports() {
 }
 
 renderReports();
+
+function updateItem(update) {
+  const link = update.url
+    ? `<a class="update-link" href="${update.url}"${update.external ? ' rel="noopener"' : ""}>${update.linkLabel || "詳しく見る"}</a>`
+    : "";
+
+  return `
+    <article class="update-item">
+      <time datetime="${update.date}">${update.dateLabel}</time>
+      <div>
+        <h3>${update.title}</h3>
+        <p>${update.summary}</p>
+        ${link}
+      </div>
+    </article>
+  `;
+}
+
+async function renderUpdates() {
+  if (!updateList) return;
+
+  try {
+    const response = await fetch("data/updates.json", { cache: "no-store" });
+    if (!response.ok) throw new Error("updates not found");
+    const updates = await response.json();
+    updateList.innerHTML = updates.slice(0, 5).map(updateItem).join("");
+  } catch {
+    updateList.innerHTML = `
+      <article class="update-item">
+        <time datetime="2026-05-22">2026年5月22日</time>
+        <div>
+          <h3>更新履歴を準備中です</h3>
+          <p>サイトの更新内容を GitHub の data/updates.json に追加して公開します。</p>
+        </div>
+      </article>
+    `;
+  }
+}
+
+renderUpdates();

@@ -1,0 +1,29 @@
+[
+  {
+    "date": "2026-05-22",
+    "dateLabel": "2026年5月22日",
+    "title": "作品ページを更新しました",
+    "summary": "Scratch 作品、HTML 学習ノベル、AI サンプルゲームをスクリーンショット付きで紹介するページを整えました。",
+    "url": "works.html",
+    "linkLabel": "作品を見る",
+    "external": false
+  },
+  {
+    "date": "2026-05-22",
+    "dateLabel": "2026年5月22日",
+    "title": "第70回の活動レポートを追加しました",
+    "summary": "2026年4月26日に開催した CoderDojo 赤羽 #70 の活動レポートを公開しました。",
+    "url": "reports/2026-04-26-coderdojo-akabane-70/",
+    "linkLabel": "レポートを見る",
+    "external": false
+  },
+  {
+    "date": "2026-05-20",
+    "dateLabel": "2026年5月20日",
+    "title": "サイトを公開準備しました",
+    "summary": "CoderDojo 赤羽のトップページ、活動履歴、作品紹介の土台を作成しました。",
+    "url": null,
+    "linkLabel": null,
+    "external": false
+  }
+]

@@ -29,6 +29,7 @@
         <a href="works.html">作品</a>
         <a href="#join">参加</a>
         <a href="#reports">履歴</a>
+        <a href="#updates">更新</a>
         <a href="#contact">連絡</a>
       </nav>
     </header>
@@ -130,11 +131,20 @@
           </div>
           <a class="view-all" href="works.html">作品ページへ</a>
         </div>
-        <a class="works-teaser" href="works.html">
-          <img src="assets/works-scratch.png" alt="" />
-          <img src="assets/works-dnovel.png" alt="" />
-          <span>スクリーンショット付きで作品を紹介しています。</span>
-        </a>
+        <div class="works-menu" aria-label="作品メニュー">
+          <a class="works-menu-item" href="works.html#scratch">
+            <img src="assets/works-scratch.png" alt="" />
+            <span>Scratch 作品</span>
+          </a>
+          <a class="works-menu-item" href="works.html#learning-html">
+            <img src="assets/works-learning-html.webp" alt="" />
+            <span>HTML 学習ノベル</span>
+          </a>
+          <a class="works-menu-item" href="works.html#ai-game">
+            <img src="assets/works-dnovel.png" alt="" />
+            <span>AI サンプルゲーム</span>
+          </a>
+        </div>
       </section>
 
       <section id="join" class="section join" aria-labelledby="join-title">
@@ -172,6 +182,19 @@
         </div>
         <div id="report-list" class="report-list" aria-live="polite">
           <noscript>活動履歴は data/reports.json を確認してください。</noscript>
+        </div>
+      </section>
+
+      <section id="updates" class="section updates" aria-labelledby="updates-title">
+        <div class="section-heading">
+          <div>
+            <p class="section-label">Updates</p>
+            <h2 id="updates-title">更新履歴</h2>
+            <p>サイトの更新内容や、作品・レポートの追加をお知らせします。</p>
+          </div>
+        </div>
+        <div id="update-list" class="update-list" aria-live="polite">
+          <noscript>更新履歴は data/updates.json を確認してください。</noscript>
         </div>
       </section>
 

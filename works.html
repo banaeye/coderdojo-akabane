@@ -6,12 +6,12 @@
     <title>作品を見る | CoderDojo 赤羽</title>
     <meta
       name="description"
-      content="CoderDojo 赤羽の Scratch 作品スタジオと、メンターが AI で作ったサンプルゲームを紹介します。"
+      content="CoderDojo 赤羽の Scratch 作品スタジオ、HTML 学習ノベル、メンターが AI で作ったサンプルゲームを紹介します。"
     />
     <meta property="og:title" content="作品を見る | CoderDojo 赤羽" />
     <meta
       property="og:description"
-      content="Scratch 作品スタジオと AI サンプルゲームをスクリーンショット付きで紹介します。"
+      content="Scratch 作品スタジオ、HTML 学習ノベル、AI サンプルゲームを紹介します。"
     />
     <meta property="og:type" content="website" />
     <meta property="og:image" content="assets/akabane-symbol.png" />
@@ -29,6 +29,7 @@
         <a href="works.html" aria-current="page">作品</a>
         <a href="index.html#join">参加</a>
         <a href="index.html#reports">履歴</a>
+        <a href="index.html#updates">更新</a>
         <a href="index.html#contact">連絡</a>
       </nav>
     </header>
@@ -46,7 +47,7 @@
       </section>
 
       <section class="section works-page" aria-label="作品一覧">
-        <article class="showcase-card">
+        <article id="scratch" class="showcase-card">
           <a class="showcase-image" href="https://scratch.mit.edu/studios/5080561/" rel="noopener">
             <img src="assets/works-scratch.png" alt="CoderDojo Akabane の Scratch スタジオ画面" />
           </a>
@@ -57,11 +58,38 @@
               参加した子どもたちやメンターの Scratch 作品を集めたスタジオです。
               ゲーム、アニメーション、実験的な作品など、道場で生まれたアイデアを見ることができます。
             </p>
+            <div class="tech-list" aria-label="利用技術">
+              <span>Scratch</span>
+            </div>
             <a class="button-link" href="https://scratch.mit.edu/studios/5080561/" rel="noopener">Scratch スタジオを見る</a>
           </div>
         </article>
 
-        <article class="showcase-card">
+        <article id="learning-html" class="showcase-card">
+          <a class="showcase-image" href="https://learning-html.pages.dev/" rel="noopener">
+            <img src="assets/works-learning-html.webp" alt="HTML 学習ノベルのタイトル画面" />
+          </a>
+          <div class="showcase-body">
+            <p class="section-label">Learning Novel</p>
+            <h2>HTML を学ぶノベル教材</h2>
+            <p>
+              物語を読み進めながら、HTML、CSS、JavaScript の役割に触れられる学習用ノベルです。
+              はじめて Web ページづくりに挑戦する時の入口として遊べます。
+            </p>
+            <div class="tech-list" aria-label="利用技術">
+              <span>React</span>
+              <span>Vite</span>
+              <span>Codex</span>
+              <span>Claude Code</span>
+              <span>Gemini</span>
+              <span>VOICEVOX</span>
+              <span>MusicFX</span>
+            </div>
+            <a class="button-link" href="https://learning-html.pages.dev/" rel="noopener">HTML 学習ノベルで遊ぶ</a>
+          </div>
+        </article>
+
+        <article id="ai-game" class="showcase-card">
           <a class="showcase-image" href="https://dnovel.pages.dev/" rel="noopener">
             <img src="assets/works-dnovel.png" alt="AI で作ったノベルゲームのタイトル画面" />
           </a>
@@ -72,6 +100,15 @@
               AI を使って物語、画像、ゲーム画面づくりを試したサンプルです。
               「AI と一緒に作ると、どんなゲームができるのか」を遊びながら見ることができます。
             </p>
+            <div class="tech-list" aria-label="利用技術">
+              <span>React</span>
+              <span>Vite</span>
+              <span>Codex</span>
+              <span>Claude Code</span>
+              <span>Gemini</span>
+              <span>VOICEVOX</span>
+              <span>MusicFX</span>
+            </div>
             <a class="button-link" href="https://dnovel.pages.dev/" rel="noopener">サンプルゲームで遊ぶ</a>
           </div>
         </article>
