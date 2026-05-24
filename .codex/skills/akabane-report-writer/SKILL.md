@@ -71,6 +71,17 @@ npx akabane-report-images YYYY-MM-DD
 
 The command writes public WebP images to the matching report page's `images/` directory. `work/` is gitignored and should keep the originals.
 
+When creating or updating report HTML, include gallery placeholders for all image groups that may be generated:
+
+- `data-report-gallery="intro"` near the opening block
+- `data-report-gallery="activity"` in the Event/activity section
+- `data-report-gallery="presentation"` in the presentation section
+- `data-report-gallery="next"` in the closing/next section
+
+Do not omit the `activity` gallery placeholder when the page has an Event section; otherwise `activity-*.webp` images will be generated but not displayed.
+
+Gallery layout should use the available content width on desktop. Avoid fixed gallery caps such as `max-width: 760px` unless the current site design explicitly requires them. On mobile, horizontal scrolling is acceptable; on wider screens, prefer a wrapping grid so photos are visible without scrolling when there is enough space. If a gallery sits inside a text-width wrapper such as the report Presentation section, make the wrapper or the gallery itself expand to the section width so images are not clipped by the text column.
+
 ## Conversation Workflow
 
 When details are missing, ask for only the next useful facts. Good questions:

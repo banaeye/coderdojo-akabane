@@ -374,6 +374,10 @@ h3 {
   margin-bottom: 28px;
 }
 
+.section-heading > div {
+  width: 100%;
+}
+
 .bubble-field {
   position: fixed;
   inset: 0;
@@ -644,17 +648,13 @@ h3 {
 
 .report-gallery {
   display: none;
-  grid-auto-columns: minmax(190px, 31%);
-  grid-auto-flow: column;
+  grid-template-columns: repeat(auto-fill, minmax(190px, 240px));
   gap: 12px;
   margin-top: 24px;
   width: 100%;
-  max-width: 760px;
   min-width: 0;
-  overflow-x: auto;
-  overscroll-behavior-inline: contain;
-  padding: 2px 4px 12px 2px;
-  scroll-snap-type: x proximity;
+  overflow: visible;
+  padding: 2px 2px 4px;
   scrollbar-width: none;
 }
 
@@ -664,6 +664,11 @@ h3 {
 
 .report-gallery:has(figure) {
   display: grid;
+}
+
+.report-page .program .report-gallery {
+  width: calc(100vw - clamp(40px, 12vw, 144px));
+  max-width: none;
 }
 
 .report-gallery figure {
@@ -899,8 +904,18 @@ h3 {
   }
 
   .report-gallery {
+    grid-template-columns: none;
     grid-auto-columns: minmax(150px, 74%);
+    grid-auto-flow: column;
     max-width: 100%;
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    padding: 2px 4px 12px 2px;
+    scroll-snap-type: x proximity;
+  }
+
+  .report-page .program .report-gallery {
+    width: 100%;
   }
 
   .works-menu-item {
