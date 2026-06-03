@@ -13,7 +13,7 @@ function reportCard(report) {
     <article class="report-card">
       <time datetime="${report.date}">${report.dateLabel}</time>
       <h3>${report.title}</h3>
-      <p>${report.summary}</p>
+      ${report.summary ? `<p>${report.summary}</p>` : ""}
       <div class="history-actions">${reportLink}${connpassLink}</div>
     </article>
   `;
